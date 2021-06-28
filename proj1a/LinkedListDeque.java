@@ -19,8 +19,8 @@ public class LinkedListDeque<T> {
         }
     }
 
-    StuffNode sentinel;
-    int size;
+    private StuffNode sentinel;
+    private int size;
 
     /**
      * create an empty deque.
@@ -34,7 +34,7 @@ public class LinkedListDeque<T> {
     /**
      * Adds x to the front of the deque.
      */
-    void addFirst(T x) {
+    public void addFirst(T x) {
         StuffNode xNode = new StuffNode(x, sentinel, sentinel.next);
         sentinel.next.prev = xNode;
         sentinel.next = xNode;
@@ -113,7 +113,7 @@ public class LinkedListDeque<T> {
      * If no such item exists, returns null.
      */
     public T get(int index) {
-        StuffNode p = sentinel;
+        StuffNode p = sentinel.next;
         while (index > 0) {
             p = p.next;
             if (p == sentinel) {
