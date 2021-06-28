@@ -1,5 +1,3 @@
-package deque;
-
 public class LinkedListDeque<T> {
     private class StuffNode {
         T item;
