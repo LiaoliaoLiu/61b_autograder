@@ -113,10 +113,7 @@ public class LinkedListDeque<T> {
      * If no such item exists, returns null.
      */
     public T get(int index) {
-        if (sentinel.next == sentinel) {
-            return null;
-        }
-        StuffNode p = sentinel.next;
+        StuffNode p = sentinel;
         while (index > 0) {
             p = p.next;
             if (p == sentinel) {
@@ -125,5 +122,19 @@ public class LinkedListDeque<T> {
             --index;
         }
         return p.item;
+    }
+
+    public T getRecursive(int index) {
+        return getRecursive(sentinel.next, index);
+    }
+
+    private T getRecursive(StuffNode p, int index) {
+        if (p == sentinel) {
+            return null;
+        } else if (index == 0) {
+            return p.item;
+        } else {
+            return getRecursive(p.next, --index);
+        }
     }
 }
