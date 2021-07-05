@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 import edu.princeton.cs.algs4.StdRandom;
 import org.junit.Test;
 
-public class TestArrayDequeEC {
+public class TestArrayDequeGold {
 
     @Test
     public void randomizedTest() {
